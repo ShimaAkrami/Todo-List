@@ -1,0 +1,75 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+/*این باعث می‌شه همه مرورگرها استایل پایه رو یکسان نمایش بدن.*/
+}
+
+.center-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  /* وقتی میخوای یه چیزی رو بیاری وسط صفحه بهش این کلاس رو بده*/
+}
+.btn {
+  padding: 10px 20px;
+  background-color: #1a73e8;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  /*استایل دکمه ها */
+}
+
+.btn:hover {
+  background-color: #0d47a1;
+  /*استایل دکمه ها */
+}
+
+body.dark {
+  background-color: #121212;
+  color: #e0e0e0;
+  /* دارک مود*/
+}
+
+body.dark .card {
+  background-color: #1f1f1f;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+  /*   دارک مود برای یه المان مثل کارتی که تو صفحه داشته باشی*/
+}
+.dark-toggle-btn {
+  margin: 20px;
+  padding: 8px 16px;
+  background-color: #4b8ce3;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  /*دکمه حالت شب*/
+}
+
+.dark-toggle-btn:hover {
+  background-color: #0d47a1;
+   /*دکمه حالت شب هاورش*/
+}
+
+body.dark .text-box p {
+  color: #ddd;
+  /*حالت دارک مود روی المان ها*/
+}
+body.dark .btn {
+  background-color: #333;
+  color: #f5f5f5;
+   /*حالت دارک مود روی المان ها*/
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Vazirmatn", Tahoma, sans-serif;
+  background-color: #f4f4f4;
+  /*همیشه بادی اینو بده  */
+}
