@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>my project</title>
+    <title>Todo List</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap" rel="stylesheet">
@@ -12,11 +12,22 @@
 </head>
 
 <body>
-    <button class="dark-toggle-btn" >
-  تغییر حالت شب/روز
-</button>
 
-    <button class="btn">کلیک کن</button>
+    <button class="dark-toggle-btn">
+        تغییر حالت شب/روز
+    </button>
+    <h1>لیست کارها</h1>
+    <form id="todo-form">
+
+        <input type="text" id="todo-input" placeholder="کار جدید بنویس" required />
+
+        <button class="btn">اضافه کن</button>
+
+    </form>
+    
+    <ul id="todo-List">
+
+    </ul>
 
     <script src="script.js"></script>
 </body>
