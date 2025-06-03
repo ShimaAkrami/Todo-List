@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-/*این باعث می‌شه همه مرورگرها استایل پایه رو یکسان نمایش بدن.*/
+  /*این باعث می‌شه همه مرورگرها استایل پایه رو یکسان نمایش بدن.*/
 }
 
 .center-page {
@@ -53,7 +53,7 @@ body.dark .card {
 
 .dark-toggle-btn:hover {
   background-color: #0d47a1;
-   /*دکمه حالت شب هاورش*/
+  /*دکمه حالت شب هاورش*/
 }
 
 body.dark .text-box p {
@@ -63,7 +63,7 @@ body.dark .text-box p {
 body.dark .btn {
   background-color: #333;
   color: #f5f5f5;
-   /*حالت دارک مود روی المان ها*/
+  /*حالت دارک مود روی المان ها*/
 }
 
 body {
@@ -71,5 +71,32 @@ body {
   padding: 0;
   font-family: "Vazirmatn", Tahoma, sans-serif;
   background-color: #f4f4f4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   /*همیشه بادی اینو بده  */
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 500px;
+  height: 500px;
+  padding: 20px 30px;
+  border-radius: 12px;
+  box-shadow:0 0 10px rgba(0, 0, 0, 0.1) ;
+}
+
+h1{
+  margin-bottom: 20px;
+}
+
+form{
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+input[type="text"]{
+  
 }

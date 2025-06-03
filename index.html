@@ -12,23 +12,30 @@
 </head>
 
 <body>
+    <div class="darkbtn">
+        <button class="dark-toggle-btn">
+            تغییر حالت شب/روز
+        </button>
+    </div>
+    <div class="container">
+        <div>
+            <h1>لیست کارها</h1>
+        </div>
+        <div>
+            <form id="todo-form">
 
-    <button class="dark-toggle-btn">
-        تغییر حالت شب/روز
-    </button>
-    <h1>لیست کارها</h1>
-    <form id="todo-form">
+                <input type="text" id="todo-input" placeholder="کار جدید بنویس" required />
 
-        <input type="text" id="todo-input" placeholder="کار جدید بنویس" required />
+                <button class="btn">اضافه کن</button>
 
-        <button class="btn">اضافه کن</button>
+            </form>
+        </div>
+        <div>
+            <ul id="todo-List">
 
-    </form>
-    
-    <ul id="todo-List">
-
-    </ul>
-
+            </ul>
+        </div>
+    </div>
     <script src="script.js"></script>
 </body>
 
