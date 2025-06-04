@@ -19,7 +19,7 @@
   border: none;
   border-radius: 6px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s ease;
   /*استایل دکمه ها */
 }
 
@@ -98,5 +98,9 @@ form{
   margin-bottom: 20px;
 }
 input[type="text"]{
-  
+  text-align: right;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius:6px ;
+  font-size: 16px;
 }
