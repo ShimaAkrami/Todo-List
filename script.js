@@ -53,7 +53,7 @@ function addTodoToDom(todotext) {
 
   const deletebtn = document.createElement("button");
   deletebtn.innerHTML = "<i class='fas fa-times-circle'> </i>";
-
+deletebtn.classList.add('delete-btn')
   deletebtn.addEventListener("click", function () {
     li.remove();
     removeFromLocalStorage(todotext);

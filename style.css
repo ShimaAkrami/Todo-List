@@ -78,29 +78,46 @@ body {
   /*همیشه بادی اینو بده  */
 }
 .container {
+  width: 70%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  width: 500px;
+  align-items: flex-end;
   height: 500px;
   padding: 20px 30px;
   border-radius: 12px;
-  box-shadow:0 0 10px rgba(0, 0, 0, 0.1) ;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-h1{
+h1 {
   margin-bottom: 20px;
 }
 
-form{
+form {
   display: flex;
   gap: 10px;
   margin-bottom: 20px;
 }
-input[type="text"]{
-  text-align: right;
+input[type="text"] {
+  direction: rtl;
+  
   padding: 10px;
   border: 1px solid #ccc;
-  border-radius:6px ;
+  border-radius: 6px;
   font-size: 16px;
+}
+ul {
+  list-style: none;
+}
+li {
+  
+    direction: rtl;
+    display: flex;
+    gap: 5px;
+}
+
+.delete-btn{
+  border:none;
+  color:red;
+  font-size:18px;
+  cursor: pointer;
 }
