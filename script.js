@@ -14,12 +14,9 @@ toggleBtn.addEventListener("click", () => {
   }
 });
 
-
 const form = document.getElementById("todo-form");
 const input = document.getElementById("todo-input");
 const ul = document.getElementById("todo-list");
-
-//function getTodosFromLocalStorage() { return JSON.parse(localStorage.getItem("todos")) || [];}
 
 function getTodosFromLocalStorage() {
   const todos = localStorage.getItem("todos");
@@ -30,12 +27,11 @@ function getTodosFromLocalStorage() {
 }
 function setItemLocal(todos) {
   return localStorage.setItem("todos", JSON.stringify(todos));
-}  
+}
 
-
-function removeFromLocalStorage(todotext) { 
-  debugger
-  updatedtodos = [];
+function removeFromLocalStorage(todotext) {
+  debugger;
+  const updatedtodos = [];
   const todos = getTodosFromLocalStorage();
   for (var i = 0; i < todos.length; i++) {
     if (todos[i] !== todotext) {
@@ -43,29 +39,39 @@ function removeFromLocalStorage(todotext) {
     }
   }
   setItemLocal(updatedtodos);
-}  
-
+}
 
 function addTodoToDom(todotext) {
   debugger;
   var li = document.createElement("li");
-  li.textContent = todotext;
+
+  const checkCircle = document.createElement("span");
+  checkCircle.classList.add("check-circle");
+  
+  const span = document.createElement("span");
+  span.textContent = todotext;
+
+  checkCircle.addEventListener("click", function () {
+    debugger
+    checkCircle.classList.toggle("checked");
+    span.classList.toggle("copmleted");
+  });
 
   const deletebtn = document.createElement("button");
   deletebtn.innerHTML = "<i class='fas fa-times-circle'> </i>";
-deletebtn.classList.add('delete-btn')
+  deletebtn.classList.add("delete-btn");
   deletebtn.addEventListener("click", function () {
     li.remove();
     removeFromLocalStorage(todotext);
   });
-
+  li.appendChild(checkCircle);
+  li.appendChild(span);
   li.appendChild(deletebtn);
   ul.appendChild(li);
 }
 
-
-function savedToLocalStorage(todotext) { 
-  debugger
+function savedToLocalStorage(todotext) {
+  debugger;
   const todos = getTodosFromLocalStorage();
   todos.push(todotext);
   setItemLocal(todos);
