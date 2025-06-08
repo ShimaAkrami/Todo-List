@@ -145,7 +145,7 @@ content:"\2713";
 position:absolute;
 }
 
-.copmleted{
+.completed{
  text-decoration: line-through;
  color:gray;
  opacity:0.7;

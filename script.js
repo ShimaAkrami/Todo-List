@@ -34,27 +34,44 @@ function removeFromLocalStorage(todotext) {
   const updatedtodos = [];
   const todos = getTodosFromLocalStorage();
   for (var i = 0; i < todos.length; i++) {
-    if (todos[i] !== todotext) {
+    if (todos[i].text !== todotext) {
       updatedtodos.push(todos[i]);
     }
   }
   setItemLocal(updatedtodos);
 }
 
-function addTodoToDom(todotext) {
+function toggleCompletedInLocalStorage(todotext) {
+  const todos = getTodosFromLocalStorage();
+  for (const todo of todos) {
+    if (todo.text === todotext) {
+      todo.completed = !todo.completed;
+      break;
+    }
+  }
+  setItemLocal(todos);
+}
+
+function addTodoToDom(newTodo) {
   debugger;
   var li = document.createElement("li");
 
   const checkCircle = document.createElement("span");
   checkCircle.classList.add("check-circle");
+//موقع رفرش شدن باید اینارو بدونه
+  if (newTodo.completed) checkCircle.classList.add("checked");
   
+
   const span = document.createElement("span");
-  span.textContent = todotext;
+  span.textContent = newTodo.text;
+//موقع رفرش شدن باید اینارو بدونه
+  if (newTodo.completed) span.classList.add("completed");
 
   checkCircle.addEventListener("click", function () {
-    debugger
+    debugger;
     checkCircle.classList.toggle("checked");
-    span.classList.toggle("copmleted");
+    span.classList.toggle("completed");
+    toggleCompletedInLocalStorage(newTodo.text);
   });
 
   const deletebtn = document.createElement("button");
@@ -62,7 +79,7 @@ function addTodoToDom(todotext) {
   deletebtn.classList.add("delete-btn");
   deletebtn.addEventListener("click", function () {
     li.remove();
-    removeFromLocalStorage(todotext);
+    removeFromLocalStorage(newTodo.text);
   });
   li.appendChild(checkCircle);
   li.appendChild(span);
@@ -70,10 +87,10 @@ function addTodoToDom(todotext) {
   ul.appendChild(li);
 }
 
-function savedToLocalStorage(todotext) {
+function savedToLocalStorage(newTodo) {
   debugger;
   const todos = getTodosFromLocalStorage();
-  todos.push(todotext);
+  todos.push(newTodo);
   setItemLocal(todos);
 }
 
@@ -82,17 +99,20 @@ window.addEventListener("DOMContentLoaded", () => {
   for (var i = 0; i < todosaved.length; i++) {
     addTodoToDom(todosaved[i]);
   }
+  //or
+  //for(const todo of todosaved){
+  //addTodoToDom(todo)
+  //}
 });
 
 form.addEventListener("submit", function (event) {
   debugger;
   event.preventDefault();
   var todotext = input.value.trim();
-  if (todotext == "") {
-    return;
-  }
-  addTodoToDom(todotext);
+  if (todotext === "") return;
+  const newTodo = { text: todotext, completed: false };
+  addTodoToDom(newTodo);
 
-  savedToLocalStorage(todotext);
+  savedToLocalStorage(newTodo);
   input.value = "";
 });
